@@ -1,0 +1,1 @@
+A clean and responsive personal portfolio built with HTML, CSS, and JavaScript, showcasing my skills, projects, and experience with a modern UI and smooth interactions. It’s designed to help recruiters quickly understand my work and connect with me easily.
