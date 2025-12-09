@@ -1,239 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsive.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Junaid — Cinematic Portfolio</title>
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css" />
 </head>
-
 <body>
-    <!-- Navbar header section -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="logo">
-                <h2 class="logo-heading">Junaid kaladgi</h2>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <i class="fas fa-bars hamburger-icon"></i>
-                <i class="fas fa-times cross-icon"></i>
-            </div>
-            <div class="menu">
-                <ul class="menu-list">
-                    <li class="menu-list-items">
-                        <a class="links" href="#home">
-                            Home</a>
-                    </li>
-                    <li class="menu-list-items">
-                        <a class="links" href="#portfolio">
-                            Portfolio</a>
-                    </li>
-                    <li class="menu-list-items">
-                        <a class="links" href="#about">
-                            About </a>
-                    </li>
-                    <li class="menu-list-items">
-                        <a class="links" href="#services">
-                            Services </a>
-                    </li>
-                    <li class="menu-list-items">
-                        <a class="links" href="#contact"> Contact Me
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <!-- Main hero banner -->
-    <section id="home" class="hero">
-        <div class="intro">
-            <div class="headings">
-                <h3 class="greet-heading">Hello, I'm</h3>
-                <h1 class="my-heading">Junaid Kaladgi</h1>
-                <h4 class="sub-heading">
-                    A Software Engineer.
-                </h4>
-            </div>
-            <div class="intro-buttons">
-                <button class="btn common-btn">Hire Me</button>
-                <button class="btn ghost-btn">Get Resume</button>
-            </div>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo"><h2 class="logo-heading">Junaid Kaladgi</h2></div>
+      <div id="hamburger" class="hamburger" aria-label="menu" aria-expanded="false" role="button">
+        <i class="fas fa-bars hamburger-icon"></i>
+        <i class="fas fa-times cross-icon" style="display:none"></i>
+      </div>
+      <div class="menu" id="menu" aria-hidden="true">
+        <ul class="menu-list">
+          <li class="menu-list-items"><a class="links" href="#home">Home</a></li>
+          <li class="menu-list-items"><a class="links" href="#portfolio">Portfolio</a></li>
+          <li class="menu-list-items"><a class="links" href="#about">About</a></li>
+          <li class="menu-list-items"><a class="links" href="#services">Services</a></li>
+          <li class="menu-list-items"><a class="links" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO with canvas for particles + layers -->
+  <main>
+    <section id="home" class="hero" aria-label="intro section">
+      <!-- animated background layers are pure CSS; particles are canvas -->
+      <canvas id="particle-canvas" class="particle-canvas" aria-hidden="true"></canvas>
+
+      <div class="cinematic-veil"></div>
+      <div class="light-streak"></div>
+
+      <div class="blob a" aria-hidden="true"></div>
+      <div class="blob b" aria-hidden="true"></div>
+      <div class="lens-flare" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="greet-heading">Hello, I'm</p>
+
+        <!-- Glitched, cinematic name -->
+        <h1 class="my-heading glitch" data-text="Junaid Kaladgi">Junaid Kaladgi</h1>
+
+        <!-- Animated job title lines -->
+        <p class="sub-heading reveal-lines">
+          <span>Software Engineer</span>
+          <span>• Java • Spring Boot • Full-stack •</span>
+        </p>
+
+        <div class="intro-buttons">
+          <button class="btn common-btn" id="hireBtn">Hire Me</button>
+          <button class="btn ghost-btn" id="resumeBtn">Get Resume</button>
         </div>
+      </div>
     </section>
-    
-    <!-- About Section -->
+
+    <!-- ABOUT -->
     <section id="about" class="about">
-        <div class="about-text">
-            <h1 class="my-heading">About Me</h1>
-            <p class="lead-para">
-                I am a passionate and highly motivated software developer with a strong foundation in Java, 
-                Spring Boot, HTML, CSS, and basic full-stack development. I love solving complex problems and 
-                building applications that make an impact. Always eager to learn new technologies, I thrive 
-                in collaborative environments and aim to contribute innovative solutions while continuously 
-                enhancing my technical skills. As a fresher, I bring energy, adaptability, and a growth mindset
-                 to every project I work on.
-            </p>
-            <p>
-                
-            </p>
-        </div>
-        <div class="about-image">
-            <img src="latest.png" alt="About Image">
-        </div>
-    </section>
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="services-heading">
-            <h1 class="my-heading text-center">My Services</h1>
-        </div>
-        <div class="services-content">
-            <div class="my-row">
-                <div class="my-col">
-                    <div class="my-card">
-                        <div class="icon">
-                            <i class="fas fa-paint-brush"></i>
-                        </div>
-                        <h3 class="greet-heading blue-text">Web Design</h3>
-                        <p class="small-para">
-                            I have a foundational understanding of web design, including creating clean, responsive layouts using HTML and CSS. 
-                            I can structure webpages effectively, apply basic styling principles, and design simple, user-friendly interfaces.
-                             I am continuously learning to improve visual consistency, usability, and overall front-end presentation.
-                        </p>
-                        <p class="small-para">
-                            
-                        </p>
-                    </div>
-                </div>
-                <div class="my-col">
-                    <div class="my-card">
-                        <div class="icon">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <h3 class="greet-heading blue-text">
-                            Web Development
-                        </h3>
-                        <p class="small-para">
-                            Web development refers to the creating,
-                            building, and maintaining
-                            of websites. It includes aspects such as
-                            web design, web publishing,
-                            web programming, and database management.
-                            It is the creation of an
-                            application that works over the internet
-                            i.e. websites.
-                        </p>
-                        <p class="small-para">
-                           
-                        </p>
-                    </div>
-                </div>
-                <div class="my-col">
-                    <div class="my-card">
-                        <div class="icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="greet-heading blue-text">Java</h3>
-                        <p class="small-para">
-                            I have a solid foundation in Java, with a clear understanding of core programming concepts such as OOP fundamentals,
-                             variables, data types, control structures, methods, arrays, and basic exception handling.
-                             I can write clean, structured code and build simple programs while continuously improving my depth in Java and backend development.
-                        </p>
-                        <p class="small-para">
-                            
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            </div>
-        </div>
+      <div class="about-text">
+        <h2 class="my-heading">About Me</h2>
+        <p class="lead-para">
+          Passionate software engineer with a strong foundation in Java, Spring Boot and front-end fundamentals.
+          I build practical, maintainable apps and obsess about UX and performance.
+        </p>
+      </div>
+      <div class="about-image">
+        <!-- optional avatar — keep subtle, not rotating -->
+        <img src="latest.png" alt="Junaid portrait" />
+      </div>
     </section>
 
-    <!-- Contact me section -->
-    <section class="contact" id="contact">
-        <div class="contact-heading">
-            <h1 class="my-heading text-center">Contact Me</h1>
+    <!-- SERVICES -->
+    <section id="services" class="services">
+      <h2 class="my-heading text-center">My Services</h2>
+      <div class="my-row">
+        <div class="my-col">
+          <div class="my-card">
+            <div class="icon"><i class="fas fa-paint-brush"></i></div>
+            <h3 class="greet-heading blue-text">Web Design</h3>
+            <p class="small-para">Clean, responsive UI with attention to performance and accessibility.</p>
+          </div>
         </div>
-        <div class="contact-content">
-            <div class="contact-form-container">
-                <h1 class="greet-heading">Get In Touch</h1>
-                <form class="contact-form">
-                    <input class="form-controls" type="text" placeholder="Your Name">
-                    <input class="form-controls" type="text" placeholder="Your Email">
-                    <input class="form-controls" type="text" placeholder="Your Phone">
-                    <textarea class="form-controls" placeholder="Write your message" name="message" id="" cols="30"
-                        rows="10">
-                      </textarea>
-                    <input class="form-btn btn common-btn" type="submit" value="Send Message">
-                </form>
-            </div>
-            <div class="contact-details">
-                <h1 class="greet-heading">My Contact Details</h1>
-                <div class="details">
-                    <h5 class="contact-heading">EMAIL</h5>
-                    <p class="contact-text">Junaidakaladgi1@gmail.com</p>
-                </div>
-                <div class="details">
-                    <h5 class="contact-heading">PHONE</h5>
-                    <p class="contact-text">+91 7338553888</p>
-                </div>
-                <div class="details">
-                    <h5 class="contact-heading"></h5>
-                    <p class="contact-text"></p>
-                </div>
-                <div class="details">
-                    <h5 class="contact-heading">ADDRESS</h5>
-                    <p class="contact-text">Karnataka, IN</p>
-                    <p></p>
-                    <p>Dharwad, 580003</p>
-                </div>
-            </div>
+        <div class="my-col">
+          <div class="my-card">
+            <div class="icon"><i class="fa-solid fa-code"></i></div>
+            <h3 class="greet-heading blue-text">Web Development</h3>
+            <p class="small-para">Backend APIs, Spring Boot, and frontend integration — production-ready code.</p>
+          </div>
         </div>
+        <div class="my-col">
+          <div class="my-card">
+            <div class="icon"><i class="fas fa-chart-line"></i></div>
+            <h3 class="greet-heading blue-text">Java</h3>
+            <p class="small-para">Solid OOP, data structures, and pragmatic clean architecture.</p>
+          </div>
+        </div>
+      </div>
     </section>
-    <!-- Footer section -->
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <h2 class="my-heading text-center">Contact Me</h2>
+      <div class="contact-content">
+        <div class="contact-form-container">
+          <h3 class="greet-heading">Get In Touch</h3>
+          <form class="contact-form" onsubmit="return false;">
+            <input class="form-controls" type="text" placeholder="Your Name" required />
+            <input class="form-controls" type="email" placeholder="Your Email" required />
+            <textarea class="form-controls" placeholder="Write your message" rows="6"></textarea>
+            <input class="form-btn btn common-btn" type="submit" value="Send Message" />
+          </form>
+        </div>
+
+        <div class="contact-details">
+          <h3 class="greet-heading">My Contact Details</h3>
+          <div class="details">
+            <h5 class="contact-heading">EMAIL</h5>
+            <p class="contact-text">junaidakaladgi1@gmail.com</p>
+          </div>
+          <div class="details">
+            <h5 class="contact-heading">PHONE</h5>
+            <p class="contact-text">+91 7338553888</p>
+          </div>
+          <div class="details">
+            <h5 class="contact-heading">LOCATION</h5>
+            <p class="contact-text">Dharwad, Karnataka, India</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer">
-        <div class="footer-content text-center">
-            <h4>
-            </h4>
-            <div class="social-links">
-                <div class="footer-menu">
-                    <ul class="footer-menu-list">
-                        <li class="footer-list-items">
-                            <a class="footer-links" href="#">
-                                <i class="fab fa-faceboogk-f"></i>
-                            </a>
-                        </li>
-                        <li class="footer-list-items">
-                            <a class="footer-links" href="#">
-                                <i class="fab fa-twittter"></i>
-                            </a>
-                        </li>
-                        <li class="footer-list-items">
-                            <a class="footer-links" href="#">
-                                <i class="fab fa-instaggram"></i>
-                            </a>
-                        </li>
-                        <li class="footer-list-items">
-                            <a class="footer-links" href="#">
-                                <i class="fab fa-linkedinn-in"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+      <div class="footer-content text-center">
+        <p class="small-para">© <span id="year"></span> Junaid Kaladgi — Crafted with cinematic chaos ✨</p>
+      </div>
     </footer>
+  </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
-        integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-        </script>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
